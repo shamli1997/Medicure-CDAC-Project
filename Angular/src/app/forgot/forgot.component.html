@@ -1,0 +1,23 @@
+
+<div class="bg-img">
+<div class="table-responsive" style="text-align: center;margin-left: 400px;margin-top: 0px;margin-right: 400px;padding-top: 300px;">
+        <form #forgotForm="ngForm" (ngSubmit)="forgot(forgotForm)" class="form-inline" role="form" id="forgot">
+        <table class="table table-hover">
+            <thead style="background-color: white;opacity: 95%;">
+                <tr><td colspan="2" style="text-align: center;"></td></tr>
+                <tr><td colspan="2"><h1 style="text-align:center;font-size: 30px;">Account Recovery</h1></td></tr>
+            </thead>
+            <tbody>
+                <tr style="background-color: white;opacity: 95%;">
+                    <td style="font-size: 18px;text-align: start;padding-top: 15px;margin-top: 20px;">Enter Email Address</td>
+                    <td><input class="form-control" ngModel name="email" type="email" required="required"  id="email" placeholder="Enter Email Here"></td>
+                </tr>
+                <tr style="background-color: white;opacity: 95%;">
+                    <td colspan="2" ><button style="font-size: 15px;" type="submit" class="btn btn-primary">Send OTP</button></td>
+                </tr>
+            </tbody>
+        </table>
+        </form>
+    </div>
+</div>
+    

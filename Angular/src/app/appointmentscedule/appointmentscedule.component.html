@@ -1,0 +1,42 @@
+
+
+
+<div style="text-align: center;" class="bg-img">
+<form #aptForm="ngForm" (ngSubmit)="BookAppt(aptForm)" class="form-inline" role="form" style="padding-top: 300px;" >
+<div style="color:white; font-size: large;">
+  <h2>
+    Book Your Appointment!
+  </h2>
+</div>
+  <div>
+    
+    <input type="date" name="apptDate" ngModel id="input" class="form-control" value="" required="required" title="Date">
+    
+  </div>
+  <br>
+
+  <select type="text" ngModel name="slots" id="slots" class="form-control">
+    <option *ngFor="let slot of slots1" [value]="slot.slot_id">{{slot.slots}}</option>
+
+  </select>
+  <br>
+  <br>
+
+  <div class="form-group" >
+    <label class="sr-only" for="">Slots</label>
+    <button type="submit" name="Confirm" class="btn btn-success">Confirm</button>
+  </div>
+<br>
+<span style="background-color:lightgreen;font-size: large;">
+  {{msg}}
+</span>
+<br>
+<h3><a routerLink="/patientschedule">View Schedules</a></h3>
+
+</form>
+</div>
+       
+       
+       
+       
+      

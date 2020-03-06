@@ -1,0 +1,38 @@
+
+<form  #delDocForm="ngForm">
+
+  <div class="form-group">
+    <label class="sr-only" for="">label</label>
+    <input type="email" class="form-control" id="" placeholder="Input field">
+  </div>
+
+  
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Qualification</th>
+          <th>City Name</th>
+          <th>Specialization</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let doct of doctors">
+          <td>{{doct.firstName}}</td>
+          <td>{{doct.qualification}}</td>
+          <td>{{doct.city.cityName}}</td>
+          <td>{{doct.specs.specialization}}</td>
+          <td><a routerLink="/updatedoctor">Update</a></td>
+          
+          
+         </tr>
+      </tbody>
+    </table>
+  </div>
+  
+

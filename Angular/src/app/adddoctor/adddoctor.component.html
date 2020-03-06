@@ -1,0 +1,70 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation" >
+    <ul class="nav navbar-nav">
+        <li class="active">
+            <a routerLink="/home">Logout</a>
+        </li>
+        <li>
+            <a routerLink="/admindoc">Doctor List</a>
+        </li>
+        
+  </ul>
+  </nav>
+<div class="bg-img">
+<form  #regDocForm="ngForm" (ngSubmit)="register(regDocForm)" role="form" style="width: 50%">
+    <div>
+        <table>
+                <tr  style="background-color: white;opacity: 90%;">
+                <h4> <td align="center">Add New Doctor</td></h4>
+                </tr>
+        </table>
+        
+    </div>
+
+    <div class="form-group" style="background-color: white; opacity: 90%;">
+        First Name
+        <input type="text" name="firstName" ngModel class="form-control" id="" placeholder="First Name">
+      </div>
+
+      <div class="form-group" style="background-color: white;opacity: 90%;">
+        Last Name
+        <input type="text" name="lastName" ngModel class="form-control" id="" placeholder="Last Name">
+      </div>
+
+    <div class="form-group" style="background-color: white;opacity: 90%;">
+      Email
+      <input type="email" name="email" ngModel class="form-control" id="" placeholder="Input Email">
+    </div>
+  
+    <div class="form-group" style="background-color: white;opacity: 90%;">
+      Mobile
+      <input type="tel" name="phone" ngModel class="form-control" id="" placeholder="+91 ">
+    </div>
+   
+    <div class="form-group" style="background-color: white;opacity: 90%;">
+      Password
+      <input type="password" name="password" ngModel class="form-control" id="" placeholder="Password ">
+    </div>
+    <div class="form-group" style="background-color: white;opacity: 90%;">
+            Qualification
+                <select ngModel name="qualification" id="qual" class="form-control" required="required">
+                        <option *ngFor="let qual of quals" [value]="qual">{{qual}}</option>
+                </select>
+        </div>
+    <div class="form-group" style="background-color: white;opacity: 90%;">
+        City
+            <select ngModel name="city" id="city" class="form-control">
+                    <option *ngFor="let city of cities" [value]=city.city_id>{{city.cityName}}</option>
+            </select>
+    </div>
+    
+<div class="form-group" style="background-color: white;opacity: 90%;">
+    Specialization
+        <select ngModel name="specialization" id="spec" class="form-control" required="required">
+                <option *ngFor="let spec of specializations" [value]=spec.spec_id>{{spec.specialization}}</option>
+        </select>
+</div>
+    
+
+    <button type="submit" class="btn btn-primary" >Add</button>
+  </form>
+</div>

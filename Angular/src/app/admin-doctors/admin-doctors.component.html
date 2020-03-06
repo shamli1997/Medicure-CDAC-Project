@@ -1,0 +1,71 @@
+
+<form  #delDocForm="ngForm" >
+
+  
+  
+
+  <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <ul class="nav navbar-nav">
+       
+         
+          <li>
+            <a routerLink="/home">Logout</a>
+          </li>
+          <li>
+            <a routerLink="/add">Add Doctor</a>
+          </li>
+         
+    </ul>
+    </nav>
+
+<div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>WELCOME ADMIN</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>List of Doctors Associated with medicure</th>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Qualification</th>
+          <th>City Name</th>
+          <th>Specialization</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let doct of doctors">
+          <td>{{doct.firstName}}</td>
+          <td>{{doct.email}}</td>
+          <td>{{doct.phone}}</td>
+
+          <td>{{doct.qualification}}</td>
+          <td>{{doct.city.cityName}}</td>
+          <td>{{doct.specs.specialization}}</td>
+         
+         <td>
+         <button type="button" class="btn btn-large btn-block btn-warning"(click)="updateDoc(doct.doctorId)">Update</button>
+          </td>
+          <td>
+          <button type="button" class="btn btn-large btn-block btn-danger" (click)="DeleteDoctor(doct)">Delete</button>
+          </td>
+          
+         </tr>
+      </tbody>
+    </table>
+  </div>
+</form>
+

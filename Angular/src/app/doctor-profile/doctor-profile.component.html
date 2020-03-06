@@ -1,0 +1,72 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <ul class="nav navbar-nav">
+        <li class="active">
+            <a routerLink="/home">Home</a>
+        </li>
+        <li>
+            <a routerLink="/about">About Us</a>
+        </li>
+        <li>
+            <a routerLink="/contact">Contact Us</a>
+        </li>
+  
+        <li>
+          <a routerLink="/patientdashboard">Patient Dashboard</a>
+      </li>
+       
+        <li>
+          <a routerLink="/home">Logout</a>
+        </li>
+  
+       
+  </ul>
+  </nav>
+  <div class="bg-img">
+<div style="background-color:white; padding-left: 500px;opacity: 90%;"><h1>Doctor Profile</h1></div>
+<div class="table-responsive">
+    <table class="table table-hover" style="text-align: left; width: 500px;"align="center">
+        <thead>
+           
+            
+        </thead>
+        <tbody style="background-color: white;align">
+            <tr>
+                <td>Name</td>
+                <td>{{doctorProfile.firstName}}</td>
+            </tr>
+            <tr>
+                <td>Qualification</td>
+                <td>{{doctorProfile.qualification}}</td>
+            </tr>
+            <!-- <tr>
+                <td>Expirience</td>
+                <td>{{doctorProfile.firstName}}</td>
+            </tr> -->
+            <tr>
+                <td>Consulting Time</td>
+                <td>9:00 - 5:00</td>
+            </tr>
+            <tr>
+                <td>Contact Number</td>
+                <td>{{doctorProfile.phone}}</td>
+            </tr>
+            <tr>
+                <td>Speciality</td>
+                <td>{{doctorProfile.specs.specialization}}</td>
+            </tr>
+           
+            <tr>
+                <td align="center" colspan="2">
+                <button type="button" value="Book Appointment" (click)="goToBooking(doctorProfile.doctorId)" class="btn btn-success">Book Appointment</button>
+                </td>
+                
+            </tr>
+            
+
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+

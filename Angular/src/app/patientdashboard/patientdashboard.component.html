@@ -1,0 +1,106 @@
+
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <ul class="nav navbar-nav">
+      <li class="active">
+          <a routerLink="/home">Home</a>
+      </li>
+      <li>
+          <a routerLink="/about">About Us</a>
+      </li>
+      <li>
+          <a routerLink="/contact">Contact Us</a>
+      </li>
+      <li >
+        <a routerLink="/home">Logout</a>
+    </li>
+      <li>
+        <a routerLink="/patientschedule">Show Schedule</a>
+      </li>
+     
+</ul>
+</nav>
+
+  
+
+
+<!-- <select name="city" id="city" [(ngModel)]="cityselected">
+  <option *ngFor="let city of cities" [value]="city.city_id">{{city.cityName}}</option>
+</select>
+
+<td><input type="button" (buttonclick)="GetDoctorList(cityselected)" value="Search" routerLink="/doctorlist"/></td> -->
+<div class="bg-img">
+<div>
+<form #cityForm="ngForm" (ngSubmit)="GetDoctorList(cityForm)" class="form-inline" role="form">
+
+<select ngModel name="cityName" id="city" class="form-control" >
+  <option *ngFor="let city of cities" [value]="city.cityName">{{city.cityName}}</option>
+</select>
+<div class="form-group">
+    <label class="sr-only" for="">City</label>
+    <button type="submit" name="search" class="btn btn-primary">Search</button>
+  </div>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr style="background-color: white;">
+        <th>Name</th>
+        <th>Qualification</th>
+        <th>Specialization</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let docts of doctors" style="padding-left: 200px;align-items: center;" style="background-color:white;;opacity: 95%;">
+      <td>{{docts.firstName}}</td>
+      <td>{{docts.qualification}}</td>
+      <td>{{docts.specs.specialization}}</td>
+      <td>
+     <button type="button" routerLink="/doctorprofile/{{docts.doctorId}}" class="btn btn-success">View Profile</button> 
+    </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</form>
+</div>
+
+<div>
+<form #specForm="ngForm" (ngSubmit)="GetDoctorListBySpec(specForm)" class="form-inline" role="form">
+<select ngModel name="specialization" id="spec" class="form-control" required="required">
+    <option *ngFor="let spec of specializations" [value]="spec.specialization">{{spec.specialization}}</option>
+  </select>
+  
+
+  <div class="form-group">
+    <label class="sr-only" for="">Specialization</label>
+    <button type="submit" name="search" class="btn btn-primary">Search</button>
+  </div>
+  
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr style="background-color: white;">
+          <th>Name</th>
+          <th>Qualification</th>
+          <th>City Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let doct of doctorSpecs" style="background-color:white;;opacity: 95%;">
+          <td>{{doct.firstName}}</td>
+          <td>{{doct.qualification}}</td>
+          <td>{{doct.city.cityName}}</td>
+          <td>
+          <button type="button" routerLink="/doctorprofile/{{doct.doctorId}}" class="btn btn-success">View Profile</button>
+          </td>
+          
+         </tr>
+      </tbody>
+    </table>
+  </div>
+  </form>
+</div>
+</div>
+

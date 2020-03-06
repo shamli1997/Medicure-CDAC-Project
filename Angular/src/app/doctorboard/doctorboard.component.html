@@ -1,0 +1,43 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <ul class="nav navbar-nav">
+   
+     
+      <li>
+        <a routerLink="/home">Logout</a>
+      </li>
+
+     
+</ul>
+</nav>
+
+<div class="bg-img">
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      
+      <tr>
+        <div style="background-color:white; padding-left: 500px;opacity: 90%;"><h1><th>HELLO DOCTOR</th></h1></div>
+        <h2 style="background-color: white;"><th>Your Upcoming Appointments</th></h2>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background-color: white;" >
+          
+              <td>Appointment Date</td>
+              <td>Appointment Time</td>
+              <td>Patient Name</td>
+              <td>Contact No</td>
+              <td>Email</td>
+            
+      </tr>
+      <tr *ngFor="let appt of patList" style="background-color: white;opacity: 90%;">
+        <td>{{appt.apptDate}}</td>
+        <td>{{appt.slots.slots}}</td>
+        <td>{{appt.patient.firstName}}</td>
+        <td>{{appt.patient.phone}}</td>
+        <td>{{appt.patient.email}}</td>
+       </tr> 
+    </tbody>
+  </table>
+</div>
+</div>
